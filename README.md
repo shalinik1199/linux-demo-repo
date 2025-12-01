@@ -8,6 +8,7 @@ sudo useradd -m -G devteam alice
 sudo useradd -m -G devteam bob
 sudo passwd alice
 sudo passwd bob
+![alt text](image-1.png)
 
 ``` 
 -  Manage permissions for project directories
@@ -18,10 +19,8 @@ sudo chmod 770 /opt/myapp
 ```
 - Install required packages (git, nginx, java)
 ``` bash
-sudo apt update -y
-sudo apt install -y git nginx openjdk-17-jdk
-# or for RHEL/CentOS
-sudo yum install -y git nginx java-17-openjdk
+sudo apt update -y (or) sudo yum update -y
+sudo yum install -y java-17-amazon-corretto
 ```
 - Check system info (memory, CPU, disks)
 ``` bash
@@ -39,7 +38,8 @@ Commands:
 sudo mkdir -p /backup
 echo "sudo cp -r /opt/myapp /backup/myapp-$(date +%F)" >> /usr/local/bin/backup.sh
 sudo chmod +x /usr/local/bin/backup.sh
-sudo crontab -e
+sudo crontab -e [sudo yum install -y cronie,sudo systemctl enable crond sudo systemctl start crond
+]
 Add cron line:
 0 2 * * * /usr/local/bin/backup.sh
 ```
