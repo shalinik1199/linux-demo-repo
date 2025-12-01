@@ -179,4 +179,4 @@ sudo logrotate -d /etc/logrotate.conf
 
 
 
-
+![alt text](image.png)
